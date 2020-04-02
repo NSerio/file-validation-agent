@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CreateCasesQueueTable" xml:space="preserve">
+    <value>USE [EDDS]
+IF OBJECT_ID('FileValidator_CasesQueue') IS NULL BEGIN 
+	CREATE TABLE [FileValidator_CasesQueue]
+		( 
+			[ID] INT IDENTITY(1,1),
+			[CaseArtifactID] [int] NOT NULL,
+			[JobArtifactID] INT NOT NULL,
+			[TimeStamp] [datetime] NOT NULL,
+			[Status] INT NOT NULL,
+			[FlagFieldColumnName] VARCHAR(100),
+            [AgentID] [int] NULL
+		) 
+END
+ELSE
+BEGIN
+	IF NOT EXISTS(
+    SELECT *
+    FROM sys.columns 
+    WHERE Name      = N'AgentID'
+      AND Object_ID = Object_ID(N'FileValidator_CasesQueue'))
+BEGIN
+   ALTER TABLE EDDSDBO.[FileValidator_CasesQueue]
+   ADD [AgentID] [int] NULL
+END
+END</value>
+  </data>
+  <data name="CreateDocumentQueueTable" xml:space="preserve">
+    <value>USE [EDDS]
+IF OBJECT_ID('FileValidator_DocumentQueue') IS NULL BEGIN 
+	CREATE TABLE [FileValidator_DocumentQueue]
+		( 
+			[ID] INT IDENTITY(1,1),
+			[CaseArtifactID] [int] NULL,
+			[JobArtifactID] [int] NULL,
+			[AgentID] INT NULL, 
+			[TimeStamp] [datetime] NOT NULL,
+			[Status] [BIT] NOT NULL,
+			[DocumentArtifactID] INT NOT NULL
+		) 
+END</value>
+  </data>
+  <data name="CreateIndexOnCasesQueue" xml:space="preserve">
+    <value>USE [EDDS]
+IF NOT EXISTS 
+	(
+		SELECT OBJECT_ID
+		FROM sys.indexes 
+		WHERE name='IX_FileValidator_CasesQueue_ID' 
+			AND object_id = OBJECT_ID('FileValidator_CasesQueue')
+	)
+BEGIN
+	CREATE CLUSTERED INDEX IX_FileValidator_CasesQueue_ID ON [FileValidator_CasesQueue]([ID])
+END</value>
+  </data>
+  <data name="CreateIndexOnDocumentQueue" xml:space="preserve">
+    <value>USE [EDDS]
+IF NOT EXISTS 
+	(
+		SELECT OBJECT_ID
+		FROM sys.indexes 
+		WHERE name='IX_FileValidator_DocumentQueue_ID' 
+			AND object_id = OBJECT_ID('FileValidator_DocumentQueue')
+	)
+BEGIN
+	CREATE CLUSTERED INDEX IX_FileValidator_DocumentQueue_ID ON [FileValidator_DocumentQueue]([ID])
+END</value>
+  </data>
+  <data name="CreateMissingFilesTable" xml:space="preserve">
+    <value>IF OBJECT_ID('FileValidator_MissingFiles') IS NULL BEGIN 
+	CREATE TABLE [FileValidator_MissingFiles]
+		( 
+			[ID] INT IDENTITY(1,1),
+			[TimeStamp] DATETIME,
+			[DocumentArtifactID] INT,
+			[FilePath] NVARCHAR(2000),
+			[FileType] NVARCHAR(200)
+		) 
+END</value>
+  </data>
+  <data name="DoesRecordExist" xml:space="preserve">
+    <value>USE [EDDS]
+SELECT ID
+FROM [FileValidator_CasesQueue]
+WHERE CaseArtifactID = {0}
+	AND JobArtifactID = {1}</value>
+  </data>
+  <data name="DoesRecordExistAlready" xml:space="preserve">
+    <value>SELECT TOP 1 
+	ArtifactID
+FROM [{0}]</value>
+  </data>
+  <data name="InsertIntoCasesQueue" xml:space="preserve">
+    <value>USE [EDDS]
+INSERT INTO [FileValidator_CasesQueue]
+	(
+		[CaseArtifactID],
+		[JobArtifactID],
+		[TimeStamp],
+		[Status],
+		[FlagFieldColumnName]
+	)
+VALUES 
+	(
+	{0},
+	{1},
+	GETUTCDATE(),
+	0,
+	'{2}'
+	)</value>
+  </data>
+  <data name="RemoveFromCasesQueue" xml:space="preserve">
+    <value>USE [EDDS]
+DELETE
+FROM [FileValidator_CasesQueue]
+WHERE CaseArtifactID = {0}
+	AND JobArtifactID = {1}</value>
+  </data>
+  <data name="RemoveFromDocumentQueue" xml:space="preserve">
+    <value>USE [EDDS]
+DELETE
+FROM [FileValidator_DocumentQueue]
+WHERE CaseArtifactID = {0}
+	AND JobArtifactID = {1}</value>
+  </data>
+  <data name="RetrieveArtifactIDByGuid" xml:space="preserve">
+    <value>SELECT ArtifactID
+FROM ArtifactGuid 
+WHERE ArtifactGuid = '{0}'</value>
+  </data>
+  <data name="RetrieveArtifactTypeName" xml:space="preserve">
+    <value>SELECT ArtifactType
+FROM ArtifactType 
+WHERE ArtifactTypeID = {0}</value>
+  </data>
+  <data name="RetrieveColumnName" xml:space="preserve">
+    <value>SELECT '[' + AVF.ColumnName + ']'
+FROM Field F
+	INNER JOIN ArtifactViewField AVF ON F.ArtifactViewFieldID = AVF.ArtifactViewFieldID
+WHERE F.ArtifactID = {0}</value>
+  </data>
+  <data name="UpdateCasesQueue" xml:space="preserve">
+    <value>USE [EDDS]
+UPDATE [FileValidator_CasesQueue]
+SET Status = {0}
+WHERE CaseArtifactID = {1}
+	AND JobArtifactID = {2}</value>
+  </data>
+</root>

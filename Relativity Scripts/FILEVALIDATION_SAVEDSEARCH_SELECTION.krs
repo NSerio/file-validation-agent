@@ -1,0 +1,23 @@
+<script>
+	<name>FILEVALIDATION_SAVEDSEARCH_SELECTION</name>
+	<description>Save search selection</description>
+	<category></category>
+	<input>
+		<search id="SavedSearch" name="Saved Search" />
+	</input>
+	<action returns="table"><![CDATA[
+   
+   IF (NOT EXISTS (SELECT * 
+                 FROM INFORMATION_SCHEMA.TABLES 
+                 WHERE TABLE_SCHEMA = 'EDDSDBO' 
+                 AND  TABLE_NAME = 'KCD_SavedSearchData'))
+BEGIN
+     CREATE TABLE EDDSDBO.KCD_SavedSearchData (ArtifactID integer)
+END
+
+     DELETE FROM EDDSDBO.KCD_SavedSearchData
+     INSERT INTO EDDSDBO.KCD_SavedSearchData SELECT EDDSDBO.[Document].ArtifactID #SavedSearch#
+
+    
+ ]]></action>
+</script>

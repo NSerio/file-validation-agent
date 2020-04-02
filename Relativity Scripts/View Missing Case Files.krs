@@ -1,0 +1,41 @@
+<script>
+	<name>View Missing Case Files</name>
+	<description>This Relativity script displays all missing files in the workspace identified up by the file validation 
+
+agent. KCD_1035966</description>
+	<version>6.6</version>
+	<category>Case Functionality</category>
+	<input></input>
+	<action returns="table" timeout="1200" displaywarning="false"><![CDATA[
+
+DECLARE @identifierColumn VARCHAR(100)
+DECLARE @SQL VARCHAR(MAX)
+DECLARE @offSet INT
+
+SET @offSet = DATEDIFF(HOUR,GetUTCDate(),GetDate())
+SET @identifierColumn = 
+	(
+		SELECT '[' + A.ColumnName + ']'
+		FROM ArtifactViewField A 
+			INNER JOIN Field F ON A.ArtifactViewFieldID = F.ArtifactViewFieldID
+		WHERE F.FieldArtifactTypeID = 10
+			AND F.FieldTypeID = 0
+			AND F.FieldCategoryID = 2
+		)
+
+SET @SQL = '
+SELECT 
+      CONVERT(VARCHAR(20),DATEADD(HOUR,'+CAST(@offSet AS VARCHAR)+',K.[TimeStamp]),109) [File Validated On]
+	  ,D.'+@identifierColumn+' [Document Identifier]
+      ,K.[DocumentArtifactID] [ArtifactID]
+      ,K.[FilePath] [File Path]
+      ,K.[FileType] [File Type]
+  FROM [EDDSDBO].[KCD_103596_FileValidator_MissingFiles] K
+	INNER JOIN [EDDSDBO].[Document] D ON K.[DocumentArtifactID] = D.[ArtifactID]
+  ORDER BY [DocumentArtifactID]
+'
+EXEC(@SQL)
+
+
+	]]></action>
+</script>

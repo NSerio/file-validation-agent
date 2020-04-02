@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CheckForFileType" xml:space="preserve">
+    <value>SELECT 
+	COUNT(*)
+  FROM 
+	[EDDSDBO].[ZCodeArtifact_{0}] WITH (NOLOCK)
+WHERE
+	AssociatedArtifactID = {1}</value>
+  </data>
+  <data name="CheckForJobSS" xml:space="preserve">
+    <value>SELECT
+ISNULL(SavedSearch,0) AS SavedSearch
+FROM 
+EDDSDBO.FileValidationJob
+WHERE
+ArtifactID = {0}</value>
+  </data>
+  <data name="CheckIfCaseStillExists" xml:space="preserve">
+    <value>USE [EDDS]
+SELECT ArtifactID FROM EDDSDBO.[ExtendedCase] WHERE ArtifactID = {0}</value>
+  </data>
+  <data name="CleanupDeletedCaseFromManagerQueue" xml:space="preserve">
+    <value>USE [EDDS]
+DELETE FROM EDDSDBO.FileValidator_CasesQueue WHERE CaseArtifactID = {0}</value>
+  </data>
+  <data name="CleanupDeletedCaseFromWorkerQueue" xml:space="preserve">
+    <value>USE [EDDS]
+WHILE (SELECT TOP 1 ID FROM EDDSDBO.FileValidator_DocumentQueue WHERE CaseArtifactID = {1}) &gt; 0
+BEGIN
+	DELETE TOP ({0})
+	FROM EDDSDBO.FileValidator_DocumentQueue
+	WHERE CaseArtifactID = {1}
+END</value>
+  </data>
+  <data name="DeleteSSTable" xml:space="preserve">
+    <value>IF (EXISTS (SELECT * 
+                 FROM INFORMATION_SCHEMA.TABLES 
+                 WHERE TABLE_SCHEMA = 'EDDSDBO' 
+                 AND  TABLE_NAME = 'FileValidator_SavedSearchData'))
+BEGIN
+DROP TABLE eddsdbo.FileValidator_SavedSearchData
+END</value>
+  </data>
+  <data name="DoQueueRecordsExist" xml:space="preserve">
+    <value>USE [EDDS]
+SELECT TOP 1 ID
+FROM EDDSDBO.[FileValidator_FileValidator_DocumentQueue] WITH(NOLOCK)
+WHERE [CaseArtifactID] = {0}
+	AND [JobArtifactID] = {1}</value>
+  </data>
+  <data name="FileTypeFilter" xml:space="preserve">
+    <value>INNER JOIN
+	EDDSDBO.[File] WITH (NOLOCK)
+	ON
+	EDDSDBO.Document.ArtifactID = EDDSDBO.[File].DocumentArtifactID
+WHERE
+	EDDSDBO.[File].[Type] IN(
+SELECT 
+	CASE [EDDSDBO].[Code].[Name] WHEN 'Native' THEN 0 WHEN 'Image' THEN 1 WHEN 'Produced Image' THEN 2 END AS FileType
+  FROM 
+	[EDDSDBO].[ZCodeArtifact_{0}] WITH (NOLOCK)
+INNER JOIN
+	[EDDSDBO].[Code] WITH (NOLOCK)
+	ON
+	[EDDSDBO].[ZCodeArtifact_{0}].CodeArtifactID = [EDDSDBO].[Code].ArtifactID
+WHERE
+	[EDDSDBO].[ZCodeArtifact_{0}].AssociatedArtifactId={1}
+)</value>
+  </data>
+  <data name="InsertMissingRecords" xml:space="preserve">
+    <value>INSERT INTO [EDDSDBO].[FileValidator_MissingFiles]
+	(
+		[TimeStamp], 
+		DocumentArtifactID, 
+		FilePath, 
+		FileType
+	)
+VALUES 
+	(
+		GetUTCDate(),
+		@DocumentArtifactID,
+		@FilePath,
+		@FileType
+	)</value>
+  </data>
+  <data name="RemoveFromCasesQueue" xml:space="preserve">
+    <value>USE [EDDS]
+DELETE
+FROM EDDSDBO.[FileValidator_CasesQueue]
+WHERE CaseArtifactID = {0}
+	AND JobArtifactID = {1}</value>
+  </data>
+  <data name="RemoveFromDocumentQueue" xml:space="preserve">
+    <value>USE [EDDS]
+DELETE FROM [eddsdbo].[FileValidator_DocumentQueue]
+WHERE [ID] = {0}</value>
+  </data>
+  <data name="RemoveFromMissingFiles" xml:space="preserve">
+    <value>DELETE FROM [EDDSDBO].FileValidator_MissingFiles</value>
+  </data>
+  <data name="RetrieveArtifactIDByGuid" xml:space="preserve">
+    <value>SELECT ArtifactID
+FROM [EDDSDBO].ArtifactGuid 
+WHERE ArtifactGuid = '{0}'</value>
+  </data>
+  <data name="RetrieveDocuments" xml:space="preserve">
+    <value>SELECT DISTINCT
+		{0} CaseArtifactID,
+		{1} JobArtifactID,
+		NULL AgentID,
+		GetUTCDate() [TimeStamp],
+		0 [Status],
+		EDDSDBO.[Document].ArtifactID DocumentArtifactID 
+	FROM EDDSDBO.[Document] WITH(NOLOCK)</value>
+  </data>
+  <data name="RetrieveFiles" xml:space="preserve">
+    <value>SELECT 
+	F.DOCUMENTARTIFACTID, 
+	F.[GUID] FileGuid, 
+	F.LOCATION, 
+	CASE F.[Type] 
+		WHEN 0 THEN 'Native' 
+		WHEN 1 THEN 'Image' 
+		WHEN 2 THEN 'Full Text' 
+		WHEN 3 THEN 'Production Image'  
+		WHEN 4 THEN 'Transcript' 
+		WHEN 5 THEN 'Production Image Placeholder' 
+		ELSE 'Other'	
+	END As FileType 
+FROM EDDSDBO.[File] F WITH(NOLOCK) 
+	INNER JOIN EDDSDBO.[Document] D WITH(NOLOCK) ON F.DocumentArtifactID = D.ArtifactID 
+WHERE D.ArtifactID = {0}</value>
+  </data>
+  <data name="RetrieveNextRecords" xml:space="preserve">
+    <value>USE [EDDS]
+SET NOCOUNT ON 
+BEGIN TRAN 
+	SELECT TOP ({0})
+		[ID]
+	INTO #FileValidator_TempTable
+	FROM [FileValidator_DocumentQueue] WITH(UPDLOCK,READPAST) 
+	WHERE [AgentID] IS NULL
+		AND [Status] = 0
+		AND [CaseArtifactID] = {2}
+		AND [JobArtifactID] = {3}
+	ORDER BY [ID]
+
+	UPDATE [FileValidator_DocumentQueue]
+	SET [AgentID] = {1}, [Status] = 1 
+	WHERE [ID] IN 
+		(
+			SELECT [ID] 
+			FROM #FileValidator_TempTable
+		)
+
+	SELECT 
+		[ID]
+		,[CaseArtifactID]
+		,[JobArtifactID]
+		,[AgentID]
+		,[TimeStamp]
+		,[Status]
+		,[DocumentArtifactID]
+	FROM [FileValidator_DocumentQueue] WITH(UPDLOCK,READPAST) 
+	WHERE [ID] IN 
+		(
+			SELECT [ID] 
+			FROM #FileValidator_TempTable
+		)
+COMMIT
+SET NOCOUNT OFF</value>
+  </data>
+  <data name="RetrieveNextWorkspace" xml:space="preserve">
+    <value>USE [EDDS]
+
+UPDATE eddsdbo.[FileValidator_CasesQueue] WITH (UPDLOCK)
+SET AgentID = {0}
+OUTPUT
+		Deleted.[ID],
+		Deleted.[CaseArtifactID],
+		Deleted.[JobArtifactID],
+		Deleted.[Status],
+		Deleted.[FlagFieldColumnName]
+WHERE ID = (SELECT TOP 1 ID
+			FROM  eddsdbo.[FileValidator_CasesQueue] WITH (NOLOCK)
+			WHERE
+			[Status] = 1
+			AND AgentID = {0}
+			OR AgentID IS NULL
+			ORDER BY [TimeStamp])</value>
+  </data>
+  <data name="RetrieveUnfinishedRecords" xml:space="preserve">
+    <value>USE [EDDS]
+SELECT TOP ({0})
+		[ID]
+      ,[CaseArtifactID]
+      ,[JobArtifactID]
+      ,[AgentID]
+      ,[TimeStamp]
+      ,[Status]
+      ,[DocumentArtifactID]
+  FROM EDDSDBO.[FileValidator_DocumentQueue] WITH(NOLOCK)
+  WHERE [AgentID] = {1}
+	AND [Status] = 1
+	AND [CaseArtifactID] = {2}
+	AND [JobArtifactID] = {3}
+  ORDER BY [ID]</value>
+  </data>
+  <data name="RetrieveWorkspaces" xml:space="preserve">
+    <value>USE [EDDS]
+SELECT 
+	[ID],
+	[CaseArtifactID],
+	[JobArtifactID],
+	[Status],
+	[FlagFieldColumnName]
+FROM eddsdbo.[FileValidator_CasesQueue] WITH(NOLOCK)
+ORDER BY [TimeStamp]</value>
+  </data>
+  <data name="SavedSearchFilter" xml:space="preserve">
+    <value>INNER JOIN eddsdbo.FileValidator_SavedSearchData ON eddsdbo.Document.ArtifactID = eddsdbo.FileValidator_SavedSearchData.ArtifactID</value>
+  </data>
+  <data name="UpdateCasesQueue" xml:space="preserve">
+    <value>USE [EDDS]
+UPDATE EDDSDBO.[FileValidator_CasesQueue]
+SET Status = {0}
+WHERE CaseArtifactID = {1}
+	AND JobArtifactID = {2}</value>
+  </data>
+  <data name="UpdateFlagFile" xml:space="preserve">
+    <value>UPDATE EDDSDBO.[Document] SET {0} = {1} WHERE ArtifactID = {2}</value>
+  </data>
+</root>
